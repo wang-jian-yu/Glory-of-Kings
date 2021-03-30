@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const scheme = new mongoose.Schema({
-  name: String,
+const schema = new mongoose.Schema({
+  name: { type: String },
+  parent: { type: mongoose.SchemaTypes.ObjectId, ref: "Category" },
 });
-module.exports = mongoose.model("Category", scheme);
+
+module.exports = mongoose.model("Category", schema);

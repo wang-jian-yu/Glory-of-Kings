@@ -1,16 +1,20 @@
 <template>
   <div>
-    <h1>分类列表</h1>
+    <h1>物品列表</h1>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="250px"></el-table-column>
-      <el-table-column prop="parent.name" label="上级分类"></el-table-column>
-      <el-table-column prop="name" label="分类名称"></el-table-column>
+      <el-table-column prop="name" label="物品名称"></el-table-column>
+      <el-table-column prop="icon" label="图标">
+        <template slot-scope="scope">
+          <img :src="scope.row.icon" style="height: 2rem" />
+        </template>
+      </el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button
             type="text"
             size="small"
-            @click="$router.push(`/categories/edit/${scope.row._id}`)"
+            @click="$router.push(`/items/edit/${scope.row._id}`)"
             >编辑</el-button
           >
           <el-button type="text" size="small" @click="remove(scope.row)"
@@ -36,7 +40,7 @@ export default {
   methods: {
     //获取数据
     async fecth() {
-      const { data } = await this.$http.get("rest/categories");
+      const { data } = await this.$http.get("rest/item");
       this.items = data;
     },
     //删除数据
@@ -46,14 +50,14 @@ export default {
         cancelButtonText: "取消",
         type: "warning",
       }).then(async () => {
-          console.log('jinglaile');
-        const res = await this.$http.delete(`rest/categories/${row._id}`);
+        console.log("jinglaile");
+        const res = await this.$http.delete(`rest/item/${row._id}`);
         console.log(res);
         this.$message({
           type: "success",
           message: "删除成功!",
         });
-        this.fecth()
+        this.fecth();
       });
     },
   },

@@ -5,6 +5,13 @@ import Main from '../views/Main.vue'
 import CategotryEdit from '../views/CategotryEdit.vue'
 import CategotryList from '../views/CategotryList.vue'
 
+
+import ItemEdit from '../views/ItemEdit.vue'
+import ItemList from '../views/ItemList.vue'
+
+import HeroEdit from '../views/HeroEdit.vue'
+import HeroList from '../views/HeroList.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,7 +22,15 @@ const routes = [
     children:[
       {path:'/categories/create',component:CategotryEdit},
       {path:'/categories/edit/:id',component:CategotryEdit,props:true},
-      {path:'/categories/list',component:CategotryList}
+      {path:'/categories/list',component:CategotryList},
+
+      {path:'/items/create',component:ItemEdit},
+      {path:'/items/edit/:id',component:ItemEdit,props:true},
+      {path:'/items/list',component:ItemList},
+
+      { path: '/heroes/create', component: HeroEdit },
+      { path: '/heroes/edit/:id', component: HeroEdit, props: true },
+      { path: '/heroes/list', component: HeroList }
     ]
   },
   
