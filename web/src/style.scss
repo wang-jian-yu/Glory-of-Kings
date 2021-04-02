@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box; //不会撑大盒子，而是会内容挤压
+  outline: none;
+}
+html {
+  font-size: 13px; //基础字体大小
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  background: #f1f1f1;
+}
+
+a {
+  color: #999;
+}
+
+//color
+$colors: (
+  "primary": #db9e3f,
+  "white": #fff,
+  "grey": #999,
+  "lift": #f9f9f9,
+  "dark-1": #343440,
+  "dark": #222,
+  "black": #000,
+);
+
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+}
+
+//text
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var;
+  }
+}
+
+//font-size
+$base-font-size: 1rem;
+$font-size: (
+  xs: 0.769231,
+  //10px
+    sm: 0.923077,
+  //12px
+    md: 1,
+  //13px
+    lg: 1.076923,
+  //14px
+    xl: 1.230769,
+  //16px,
+);
+
+@each $sizeKey, $size in $font-size {
+  .fs-#{$sizeKey} {
+    font-size: $size * $base-font-size;
+  }
+}
+
+//flex
+// flex
+// flex
+.d-flex {
+  display: flex;
+}
+.flex-column {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+$flex-jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+
+@each $key, $value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+$flex-ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+);
+
+@each $key, $value in $flex-ai {
+    .ai-#{$key} {
+      align-items: $value;
+    }
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+

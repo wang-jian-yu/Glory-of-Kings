@@ -48,7 +48,6 @@ export default {
         cancelButtonText: "取消",
         type: "warning",
       }).then(async () => {
-        console.log("jinglaile");
         const res = await this.$http.delete(`rest/articles/${row._id}`);
         console.log(res);
         this.$message({

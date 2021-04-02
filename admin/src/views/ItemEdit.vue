@@ -8,7 +8,8 @@
       <el-form-item label="图标">
         <el-upload
           class="avatar-uploader"
-          :action="$http.defaults.baseURL + 'upload'"
+          :action="uploadUrl"
+          :headers="getAuthHeaders()"
           :show-file-list="false"
           :on-success="afterUpload"
         >
@@ -35,7 +36,7 @@ export default {
   },
   methods: {
     afterUpload(res) {
-      this.$set(this.model, "icon", res.url);   //$set解决响应不及时问题，  或者在model里面添加对应属性名（初始化）
+      this.$set(this.model, "icon", res.url); //$set解决响应不及时问题，  或者在model里面添加对应属性名（初始化）
     },
     async save() {
       let res; // eslint-disable-line no-unused-vars
@@ -62,5 +63,4 @@ export default {
 </script>
 
 <style>
-
 </style>

@@ -69,7 +69,6 @@ export default {
         res = await this.$http.post("rest/articles", this.model);
       }
 
-      // console.log(res);
       this.$router.push("/articles/list");
       this.$message({
         type: "success",
@@ -77,10 +76,6 @@ export default {
       });
     },
     async handleImageAdded(file, Editor, cursorLocation,) {
-      // An example of using FormData
-      // NOTE: Your key could be different such as:
-      // formData.append('file', file)
-
       const formData = new FormData();
       formData.append("file", file);
       const res = await this.$http.post("upload", formData);
