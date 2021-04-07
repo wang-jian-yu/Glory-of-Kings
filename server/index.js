@@ -10,6 +10,8 @@ app.set('secret','xiaohei')
 require('./routes/admin')(app)
 require('./plugins/db')(app)
 require('./routes/web')(app)
+app.use('/', express.static(__dirname + '/web'))
+app.use('/admin', express.static(__dirname + '/admin'))
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
 app.listen(3000,()=>{
