@@ -153,11 +153,75 @@ p {
     height: 1.5385rem;
     background-position: 63.546% 15.517%;
   }
+  &.gushizhan {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 90.483% 15.614%;
+  }
+  &.zhoubian {
+    width: 1.7692rem;
+    height: 1.692308rem;
+    background-position: 36.746% 0.924%;
+  }
+  &.tiyanfu {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 10.408% 15.517%;
+  }
+  &.xinrenzq {
+    width: 1.7692rem;
+    height: 1.615385rem;
+    background-position: 89.733% 1.266%;
+  }
+  &.rongyao {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 36.467% 15.287%;
+  }
+  &.wangzheyingdi {
+    width: 1.7692rem;
+    height: 1.746154rem;
+    background-position: 63.3% 0.927%;
+  }
+  &.gongzonghao {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 0 96.207%;
+  }
   &.sprite-arrow{
     width: 0.7692rem;
     height: 0.7692rem;
     background-position: 38.577% 52.076%;
   }
+}
+
+.banben{
+  background: url(../images/version-icon.png) no-repeat 33.333% 33.333%;
+  background-size: 1.923077rem;
+  display: inline-block;
+  width: 1.846154rem;
+	height: 1.846154rem;
+}
+.wxwzt{
+  background: url(../images/wxwzt.png) no-repeat 33.333% 33.333%;
+  background-size: 1.923077rem;
+  display: inline-block;
+  width: 1.846154rem;
+	height: 1.846154rem;
+}
+.djhj{
+  background: url(../images/djhj.png) no-repeat 33.333% 33.333%;
+  background-size: 1.923077rem;
+  display: inline-block;
+  width: 1.846154rem;
+	height: 1.846154rem;
+}
+.cyhdy{
+  background: url(../images/cyhdy.png) no-repeat 33.333% 33.333%;
+  background-size: 1.923077rem;
+  display: inline-block;
+  width: 1.846154rem;
+	height: 1.846154rem;
 }
 // borders
 @each $dir in (top, right, bottom, left) {

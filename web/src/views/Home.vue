@@ -4,14 +4,14 @@
       <swiper-slide>
         <img
           class="w-100"
-          src="../assets/images/210794580bb9303653804bb7b482f2a4.jpeg"
+          src="../assets/images/b9905b35bb0afa9050d9ddbe04d82d29.jpeg"
           alt
         />
       </swiper-slide>
       <swiper-slide>
         <img
           class="w-100"
-          src="../assets/images/210794580bb9303653804bb7b482f2a4.jpeg"
+          src="../assets/images/ddc8c8922cbb694dfb73c86bb03fce22.jpeg"
           alt
         />
       </swiper-slide>
@@ -31,9 +31,9 @@
 
     <div class="nav-icons bg-white mt-3 text-center pt-3 text-dark-1">
       <div class="d-flex flex-wrap">
-        <div class="nav-item mb-3" v-for="n in 10" :key="n">
-          <i class="sprite sprite-news"></i>
-          <div class="py-2">爆料站</div>
+        <div class="nav-item mb-3" v-for="item in arr" :key="item.id">
+          <i class="sprite" :class="item.clazz"></i>
+          <div class="py-2">{{item.title}}</div>
         </div>
       </div>
       <div class="bg-light py-2 fs-sm">
@@ -90,6 +90,21 @@ import dayjs from "dayjs";
 export default {
   data() {
     return {
+      //首页菜单数据
+      arr:[
+        {id:'a001',title:'爆料站',clazz:'sprite-news'},
+        {id:'a002',title:'故事站',clazz:'gushizhan'},
+        {id:'a003',title:'周边商城',clazz:'zhoubian'},
+        {id:'a004',title:'体验服',clazz:'tiyanfu'},
+        {id:'a005',title:'新人专区',clazz:'xinrenzq'},
+        {id:'a006',title:'荣耀·传承',clazz:'rongyao'},
+        {id:'a007',title:'王者营地',clazz:'wangzheyingdi'},
+        {id:'a008',title:'公众号',clazz:'gongzonghao'},
+        {id:'a009',title:'版本介绍',clazz:'banben'},
+        {id:'a0010',title:'对局环境',clazz:'djhj'},
+        {id:'a0011',title:'无限王者团',clazz:'wxwzt'},
+        {id:'a0012',title:'创意互动营',clazz:'cyhdy'},
+      ],
       swiperOption: {
         pagination: {
           el: ".pagination-home",
@@ -108,7 +123,6 @@ export default {
     async fetchNewsCats() {
       const res = await this.$http.get("news/list");
       this.newsCats = res.data;
-      console.log(`newCats`, this.newsCats);
     },
     async fetchHeroCats() {
       const res = await this.$http.get("heroes/list");

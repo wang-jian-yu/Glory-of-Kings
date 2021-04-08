@@ -10,14 +10,18 @@
     </div>
     <div class="bg-primary pt-3 pb-2">
       <div class="nav nav-inverse pb-1 jc-around">
-        <div class="nav-item active">
+        <div class="nav-item " :class="currentTag == '/'?'active':''">
           <router-link class="nav-link" tag="div" to="/">首页</router-link>
         </div>
-        <div class="nav-item">
-          <router-link class="nav-link" tag="div" to="/">攻略中心</router-link>
+        <div class="nav-item" :class="currentTag == '/gonglue'?'active':''">
+          <router-link class="nav-link" tag="div" to="/gonglue"
+            >攻略中心</router-link
+          >
         </div>
-        <div class="nav-item">
-          <router-link class="nav-link" tag="div" to="/">赛事中心</router-link>
+        <div class="nav-item" :class="currentTag == '/saishi'?'active':''">
+          <router-link class="nav-link" tag="div" to="/saishi"
+            >赛事中心</router-link
+          >
         </div>
       </div>
     </div>
@@ -27,7 +31,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      currentTag: "/",
+    };
+  },
+  watch: {
+    $route(to, from) {
+      this.currentTag = to.path;
+      console.log(to.path);
+      console.log(from.path);
+    },
+  },
+};
 </script>
 
 

@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import Main from "../views/Main.vue";
 import Article from "../views/Article.vue";
 import Hero from "../views/Hero.vue";
+import Gonglue from "../views/Gonglue";
+import Saishi from "../views/Saishi";
 
 Vue.use(VueRouter);
 
@@ -14,6 +16,8 @@ const routes = [
     component: Main,
     children: [
       { path: "/", name: "home", component: Home },
+      { path: "/gonglue", name: "gonglue", component: Gonglue },
+      { path: "/saishi", name: "saishi", component: Saishi },
       {
         path: "/articles/:id",
         name: "article",
