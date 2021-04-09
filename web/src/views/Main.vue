@@ -34,14 +34,12 @@
 export default {
   data() {
     return {
-      currentTag: "/",
+      currentTag: this.$router.history.current.path,
     };
   },
   watch: {
-    $route(to, from) {
+    $route(to, from) { // eslint-disable-line no-unused-vars
       this.currentTag = to.path;
-      console.log(to.path);
-      console.log(from.path);
     },
   },
 };

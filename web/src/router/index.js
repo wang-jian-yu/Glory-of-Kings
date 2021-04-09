@@ -7,7 +7,7 @@ import Hero from "../views/Hero.vue";
 import Gonglue from "../views/Gonglue";
 import Saishi from "../views/Saishi";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter);  
 
 const routes = [
   {

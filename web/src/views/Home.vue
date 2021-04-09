@@ -30,20 +30,20 @@
     <!-- end of swiper -->
 
     <div class="nav-icons bg-white mt-3 text-center pt-3 text-dark-1">
-      <div class="d-flex flex-wrap">
+      <div class="d-flex flex-wrap" :style="expand?'':'height:60px;overflow: hidden;'">
         <div class="nav-item mb-3" v-for="item in arr" :key="item.id">
           <i class="sprite" :class="item.clazz"></i>
           <div class="py-2">{{item.title}}</div>
         </div>
       </div>
-      <div class="bg-light py-2 fs-sm">
-        <i class="sprite sprite-arrow mr-1"></i>
-        <span>收起</span>
+      <div class="bg-light py-2 fs-sm" @click="expand = !expand" >
+        <i class="sprite sprite-arrow mr-1" :style="expand?'':'transform:rotate(180deg);'"></i>
+        <span>{{expand?'收起':'展开'}}</span>
       </div>
     </div>
     <!-- end of nav icons -->
 
-    <m-list-card icon="menu1" title="新闻资讯" :categories="newsCats">
+    <m-list-card icon="sprite news" title="新闻资讯" :categories="newsCats">
       <template #items="{ category }">
         <router-link
           tag="div"
@@ -62,7 +62,7 @@
       </template>
     </m-list-card>
 
-    <m-list-card icon="card-hero" title="英雄列表" :categories="heroCats">
+    <m-list-card icon="sprite heroslist" title="英雄列表" :categories="heroCats">
       <template #items="{ category }">
         <div class="d-flex flex-wrap" style="margin: 0 -0.5rem">
           <router-link
@@ -105,6 +105,8 @@ export default {
         {id:'a0011',title:'无限王者团',clazz:'wxwzt'},
         {id:'a0012',title:'创意互动营',clazz:'cyhdy'},
       ],
+      //是否为展开
+      expand:true,
       swiperOption: {
         pagination: {
           el: ".pagination-home",

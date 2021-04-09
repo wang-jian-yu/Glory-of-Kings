@@ -77,7 +77,6 @@ export default {
         res = await this.$http.post("rest/ads", this.model);
       }
 
-      // console.log(res);
       this.$router.push("/ads/list");
       this.$message({
         type: "success",
