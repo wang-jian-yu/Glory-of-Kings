@@ -98,7 +98,7 @@ module.exports = (app) => {
       });
       return cat;
     });
-    console.log(cats);
+    // console.log(cats);
     res.send(cats);
   });
 

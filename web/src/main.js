@@ -11,6 +11,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
+
 import Card from './components/Card.vue'
 Vue.component('m-card', Card)
 
@@ -20,6 +21,7 @@ Vue.component('m-list-card', ListCard)
 
 
 import axios from 'axios'
+import './plugins/element.js'
 Vue.prototype.$http = axios.create({
   baseURL: process.env.VUE_APP_API_URL || '/web/api'
   // baseURL: 'http://localhost:3000/web/api'

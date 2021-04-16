@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     afterUpload(res) {
+      console.log(res);
       this.$set(this.model, "icon", res.url); //$set解决响应不及时问题，  或者在model里面添加对应属性名（初始化）
     },
     async save() {

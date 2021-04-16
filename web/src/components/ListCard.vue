@@ -1,6 +1,7 @@
 <template>
   <m-card :icon="icon" :title="title">
-    <div class="nav jc-between">
+    <img v-if="newHerosurl!==null" :src="newHerosurl" style="width:100%">
+    <div class="nav jc-between pt-3">
       <div class="nav-item" :class="{active: active === i}"
       v-for="(category, i) in categories" :key="i"
       @click="$refs.list.swiper.slideTo(i)">
@@ -23,7 +24,11 @@ export default {
   props: {
     icon: { type: String, required: true },
     title: { type: String, required: true },
+    newHerosurl: { type: String, required: false },
     categories: { type: Array, required: true }
+  },
+  created() {
+    console.log(this.newHerosurl)
   },
   data(){
     return {

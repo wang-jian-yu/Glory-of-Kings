@@ -52,7 +52,10 @@
           v-for="(news, i) in category.newsList"
           :key="i"
         >
-          <span class="text-info">[{{ news.categoryName }}]</span>
+          <el-tag size='small'  v-if="news.categoryName==='赛事'">{{ news.categoryName }}</el-tag>
+          <el-tag size='small' type='warning' v-if="news.categoryName==='新闻'">{{ news.categoryName }}</el-tag>
+          <el-tag size='small' type='success' v-if="news.categoryName==='活动'">{{ news.categoryName }}</el-tag>
+          <el-tag size='small' type='danger' v-if="news.categoryName==='公告'">{{ news.categoryName }}</el-tag>
           <span class="px-2">|</span>
           <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{
             news.title
@@ -62,7 +65,7 @@
       </template>
     </m-list-card>
 
-    <m-list-card icon="sprite heroslist" title="英雄列表" :categories="heroCats">
+    <m-list-card icon="sprite heroslist" :newHerosurl="test" title="英雄列表" :categories="heroCats">
       <template #items="{ category }">
         <div class="d-flex flex-wrap" style="margin: 0 -0.5rem">
           <router-link
@@ -75,6 +78,7 @@
           >
             <img :src="hero.avatar" class="w-100" />
             <div>{{ hero.name }}</div>
+            
           </router-link>
         </div>
       </template>
@@ -90,6 +94,7 @@ import dayjs from "dayjs";
 export default {
   data() {
     return {
+      test:'http://localhost:3000/uploads/b173b3afcb06645a03a9fecf21f4e266',
       //首页菜单数据
       arr:[
         {id:'a001',title:'爆料站',clazz:'sprite-news'},
