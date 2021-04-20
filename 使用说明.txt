@@ -1,0 +1,4 @@
+1.  开启3个终端，分别进入server、admin、web目录
+2.  先分别运行npm i
+3.  在分别运行npm run serve
+4.  浏览器分别访问  http://localhost:8080/     http://localhost:8081/ 

@@ -33,7 +33,7 @@
       <div class="d-flex flex-wrap" :style="expand?'':'height:60px;overflow: hidden;'">
         <div class="nav-item mb-3" v-for="item in arr" :key="item.id">
           <i class="sprite" :class="item.clazz"></i>
-          <div class="py-2">{{item.title}}</div>
+          <div class="py-2"><a style="text-decoration: none;" :href="item.href">{{item.title}}</a></div>
         </div>
       </div>
       <div class="bg-light py-2 fs-sm" @click="expand = !expand" >
@@ -84,9 +84,9 @@
       </template>
     </m-list-card>
 
-    <m-card icon="menu1" title="英雄列表"></m-card>
+    <!-- <m-card icon="menu1" title="英雄列表"></m-card>
     <m-card icon="menu1" title="精彩视频"></m-card>
-    <m-card icon="menu1" title="图文攻略"></m-card>
+    <m-card icon="menu1" title="图文攻略"></m-card> -->
   </div>
 </template>
 <script>
@@ -97,18 +97,18 @@ export default {
       test:'http://localhost:3000/uploads/b173b3afcb06645a03a9fecf21f4e266',
       //首页菜单数据
       arr:[
-        {id:'a001',title:'爆料站',clazz:'sprite-news'},
-        {id:'a002',title:'故事站',clazz:'gushizhan'},
-        {id:'a003',title:'周边商城',clazz:'zhoubian'},
-        {id:'a004',title:'体验服',clazz:'tiyanfu'},
-        {id:'a005',title:'新人专区',clazz:'xinrenzq'},
-        {id:'a006',title:'荣耀·传承',clazz:'rongyao'},
-        {id:'a007',title:'王者营地',clazz:'wangzheyingdi'},
-        {id:'a008',title:'公众号',clazz:'gongzonghao'},
-        {id:'a009',title:'版本介绍',clazz:'banben'},
-        {id:'a0010',title:'对局环境',clazz:'djhj'},
-        {id:'a0011',title:'无限王者团',clazz:'wxwzt'},
-        {id:'a0012',title:'创意互动营',clazz:'cyhdy'},
+        {id:'a001',title:'爆料站',clazz:'sprite-news',href:'https://pvp.qq.com/m/m201706/coming/index.htm'},
+        {id:'a002',title:'故事站',clazz:'gushizhan',href:''},
+        {id:'a003',title:'周边商城',clazz:'zhoubian',href:''},
+        {id:'a004',title:'体验服',clazz:'tiyanfu',href:''},
+        {id:'a005',title:'新人专区',clazz:'xinrenzq',href:''},
+        {id:'a006',title:'荣耀·传承',clazz:'rongyao',href:''},
+        {id:'a007',title:'王者营地',clazz:'wangzheyingdi',href:''},
+        {id:'a008',title:'公众号',clazz:'gongzonghao',href:''},
+        {id:'a009',title:'版本介绍',clazz:'banben',href:''},
+        {id:'a0010',title:'对局环境',clazz:'djhj',href:''},
+        {id:'a0011',title:'无限王者团',clazz:'wxwzt',href:''},
+        {id:'a0012',title:'创意互动营',clazz:'cyhdy',href:''},
       ],
       //是否为展开
       expand:true,

@@ -8,7 +8,7 @@
       </div>
       <button type="button" class="btn bg-primary">立即下载</button>
     </div>
-    <div class="bg-primary pt-3 pb-2">
+    <!-- <div class="bg-primary pt-3 pb-2">
       <div class="nav nav-inverse pb-1 jc-around">
         <div class="nav-item " :class="currentTag == '/'?'active':''">
           <router-link class="nav-link" tag="div" to="/">首页</router-link>
@@ -24,7 +24,7 @@
           >
         </div>
       </div>
-    </div>
+    </div> -->
 
     <router-view></router-view>
   </div>

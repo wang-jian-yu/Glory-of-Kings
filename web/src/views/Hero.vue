@@ -40,10 +40,10 @@
           </div>
         </div>
       </div>
-      <swiper>
-        <swiper-slide>
-          <div>
-            <div class="p-3 bg-white border-bottom">
+      <!-- <swiper> -->
+        <!-- <swiper-slide> -->
+          <!-- <div> -->
+            <!-- <div class="p-3 bg-white border-bottom">
               <div class="d-flex">
                 <router-link tag="button" to="/" class="btn btn-lg flex-1">
                   <i class="iconfont icon-menu1"></i>
@@ -53,7 +53,7 @@
                   <i class="iconfont icon-menu1"></i>
                   英雄介绍视频
                 </router-link>
-              </div>
+              </div> -->
 
               <!-- skills -->
               <div class="skills bg-white mt-4">
@@ -120,11 +120,11 @@
               <div class="border-bottom mt-3"></div>
             </m-card>
             
-          </div>
-        </swiper-slide>
-        <swiper-slide></swiper-slide>
-      </swiper>
-    </div>
+          <!-- </div> -->
+        <!-- </swiper-slide> -->
+        <!-- <swiper-slide></swiper-slide> -->
+      <!-- </swiper> -->
+    <!-- </div> -->
   </div>
 </template>
 
