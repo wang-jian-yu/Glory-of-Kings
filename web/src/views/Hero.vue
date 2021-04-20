@@ -41,7 +41,7 @@
         </div>
       </div>
       <swiper>
-        <swiper-slide>
+        <swiper-slide>  
           <div>
             <div class="p-3 bg-white border-bottom">
               <div class="d-flex">
